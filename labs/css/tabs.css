@@ -1,0 +1,40 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+div.tabs{
+    height: 500px;
+    width:500px;
+}
+div.tab__body{
+    width:100%;
+    height:100%;
+    position: relative;
+
+}
+.tab__content{
+    position: absolute;
+    height:100%;
+    background-color: bisque;
+}
+div.tab__links{
+    width:100%;
+    display:flex;
+    flex-flow: row;
+    height: 50px;
+    background-color: bisque;
+    position: relative;
+    
+}
+div.tab__link{
+    display: inline-block;
+    width:100%;
+    line-height: 50px;
+    text-align: center;
+}
+
+.active{
+    background-color: red;
+    color:white;
+    z-index: 1;
+}

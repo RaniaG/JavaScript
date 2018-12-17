@@ -1,0 +1,141 @@
+
+.carousel{
+    position: relative;
+    height: 500px; 
+    overflow: hidden;
+}
+
+
+.control{
+    z-index: 1;    
+    position: absolute;
+    width:80px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    top:50%;
+    transform: translateY(-50%);
+}
+.control:hover .chevron{
+    border-color:white; 
+}
+.right-btn{
+    right:0%;
+}
+.chevron {
+
+    border-style: solid;
+    border-color:black;
+	border-width: 5px 5px 0 0;
+	content: '';
+	display: inline-block;
+	height: 10px;
+	position: relative;
+    width: 10px;
+}
+
+.chevron.right{
+    transform: rotate(45deg);
+}
+.chevron.left{
+    transform: rotate(-135deg);
+}
+
+.bullet-btn{
+    border:1px solid black;
+    width:10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 100%;
+    /* background-color: red; */
+}
+.bullet-btn.active{
+    background-color: black;
+}
+.bullet-btns{
+    position: absolute;
+    /* background-color: red; */
+    bottom:0px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+}
+.slides{
+    background-color: grey;
+    position: relative;
+    height: 100%;
+    width:100%;
+}
+.slide{
+    height: 100%;
+    width:100%;
+    position: absolute;
+    text-align: center;
+    line-height: 500px;
+    font-size: 100px;
+    animation-duration: 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+.slide--1{
+    /* visibility: visible; */
+    background-color: gold;
+}
+.slide--2{
+    background-color: silver;
+}
+.slide--3{
+    background-color: brown;
+}
+.slide--4{
+    background-color: pink;
+}
+.slide--5{
+    background-color: rosybrown;
+}
+
+@keyframes enter_left{
+    from{
+        visibility: hidden;
+        right:100%
+    }
+    to{
+        right:0%;
+        visibility: visible;        
+
+    }
+}
+@keyframes enter_right{
+    from{
+        visibility: hidden;
+        left:100%
+    }
+    to{
+        left:0%;
+        visibility: visible;        
+    }
+}
+@keyframes exit_right{
+    from{
+        visibility: visible;                
+        left:0%;
+    }
+    to{
+        left:100%;
+        visibility: hidden;
+
+    }
+}
+@keyframes exit_left{
+    from{
+        visibility: visible;        
+        right:0%;
+    }
+    to{
+        right:100%;
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,115 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.questions-nav{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+}
+.q-link{
+    width: 50px;
+    height: 100%;
+    background-color: black;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    line-height: 50px;
+    color:white;
+}
+.q-link:hover{
+    background-color: lightseagreen;
+}
+.q-link.active{
+    background-color: lightseagreen;
+}
+.questions-container{
+    display: flex;
+    border-bottom: 1px solid lightseagreen;
+    border-left: 1px solid lightseagreen;
+
+}
+.questions{
+    width:80%;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+}
+.question{
+    font-weight: 600;
+}
+.answer-container{
+    width:80%;
+    height:50px;
+    border: 1px solid grey;
+    margin:5px;
+    border-radius: 5px;
+    /* text-align: center; */
+    display: flex;
+    overflow: hidden;
+    flex-flow: row;
+    align-items: center;
+}
+.answer-container:hover{
+    color:white;
+    background-color: lightseagreen;
+}
+.answer-container.active{
+    color:white;
+    background-color: lightseagreen;
+}
+.answer-number{
+    height: 100%;
+    width:5%;
+    border-right:1px solid grey;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 5px;
+}
+.skipped{
+    width:20%;
+    height: 500px;
+    background-color: lightseagreen;
+    display: flex;
+    flex-flow: column;
+}
+.controls{
+    margin-right:10px;
+    width: 200px;
+    height: 100px;
+    align-self: flex-end;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.control-btn{
+    padding:10px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid lightseagreen;
+    border-radius: 10px;
+}
+.control-btn:hover{
+    color:white;
+    background-color: lightseagreen;
+}
+
+
+.skipped-question{
+    padding:2px;
+    text-align: center;
+    background-color: black;
+    color:white;
+    border-bottom: 1px solid grey;
+}
+.skipped-question:hover{
+    background-color: white;
+    color:lightseagreen;
+}

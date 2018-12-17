@@ -1,0 +1,23 @@
+.Accordion{
+    display: flex;
+    width:500px;
+    height:300px;
+    flex-flow: column;
+}
+.tab__title{
+    height: 50px;
+    line-height: 50px;
+    background-color: lightblue;
+    border-bottom:1px solid rgb(138, 203, 224);
+}
+.tab__content{
+    transition-duration: 0.5s;
+    height: 0px;
+    overflow: hidden;
+}
+.tab{
+    background-color: beige;
+}
+.active .tab__content{
+    height: 100px;
+}

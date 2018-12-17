@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/form.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="form-container">
+        <form action="test.html" method='POST'>
+            <div class="form-item">
+                Name*
+                <input type="text" name="name">
+            </div>
+            <div class="form-item">
+                Age*
+                <input type="text" name="age"> 
+            </div>
+            <div class="form-item">
+                Mobile*
+                <input type="text" name="phone"> 
+            </div>
+            <div class="form-item">
+                Email*
+                <input type="text" name="email"> 
+            </div>
+            <div class="form-item">
+                Gender*
+                <input type="radio" name="gender" value='female' id='female'>
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value='male' id='male'>
+                <label for="male">Male</label>
+
+            </div>
+            <div class="form-btn">
+                <input type="button" value="Submit" >
+            </div>
+        </form>
+    </div>
+    <script src="js/form.js"></script>
+</body>
+</html>
