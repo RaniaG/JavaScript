@@ -5,6 +5,8 @@ var email=document.getElementsByName("email")[0];
 var gender=document.getElementsByName("gender");
 var submitBtn=document.querySelector(".form-btn input");
 var form=document.getElementsByTagName("form")[0];
+var formContainer=document.getElementsByClassName("form-container")[0];
+var testContainer=document.getElementsByClassName("test")[0];
 
 function validation(condition,type,typeString,errorMessage){
     if(condition)
@@ -70,7 +72,18 @@ submitBtn.addEventListener("click",function(){
         console.log("valid email");
     else console.log("invalid email");
     if(validateAge&&validateEmail&&validatePhone&&validateName)
-        form.submit();
+        {
+            // form.submit();
+            
+            formContainer.style.display="none";
+            testContainer.style.display="block";
+            document.title="Test";
+            _user=new user(_name.value,age.value,phone.value,email.value,gender[0].checked?gender[0].value:gender[1].value);
+            createQuestions();
+            selectRandomQuestions(5);
+            alert("Start exam");
+        }
         
 });
 gender[0].checked=true;
+

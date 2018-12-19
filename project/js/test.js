@@ -11,31 +11,41 @@ var skipBtn=document.getElementById("skip");
 var terminateBtn=document.getElementById("terminate");
 var skippedQuestionContainer=document.getElementsByClassName("skipped")[0];
 
+var resultsContainer=document.getElementsByClassName("test-result-container")[0];
+var results=document.getElementsByClassName("test-result")[0];
+var _user;
 
-function questionConst(qId,quesText,ansArr,correctAns,ans){
+function questionConst(qId,quesText,ansArr,correctAns){
     this.qId=qId;
     this.quesText=quesText;
     this.ansArr=ansArr;
     this.correctAns=correctAns;
-    this.ans=ans;
+    this.ans=null;
+}
+function user(nam,age,phone,email,gender){
+    this.nam=nam;
+    this.age=age;
+    this.phone=phone;
+    this.email=email;
+    this.gender=gender;
 }
 
 function createQuestions(){
-    questionsArr[0]=new questionConst(0,"what is the color of oranges?",['orange','red','green','yellow'],0,null);
-    questionsArr[1]=new questionConst(1,"what is the color of banana?",['orange','red','green','yellow'],3,null);
+    questionsArr[0]=new questionConst(0,"what is the color of oranges?",['orange','red','green','yellow'],0);
+    questionsArr[1]=new questionConst(1,"what is the color of banana?",['orange','red','green','yellow'],3);
 
-    questionsArr[2]=new questionConst(2,"what is the color of cucumber?",['orange','red','green','yellow'],2,null);
+    questionsArr[2]=new questionConst(2,"what is the color of cucumber?",['orange','red','green','yellow'],2);
 
-    questionsArr[3]=new questionConst(3,"what is the color of apples?",['orange','red','green','yellow'],1,null);
-    questionsArr[4]=new questionConst(4,"what is the color of grapes?",['orange','red','green','yellow'],0,null);
-    questionsArr[5]=new questionConst(5,"what is the color of mango?",['orange','red','green','yellow'],0,null);
+    questionsArr[3]=new questionConst(3,"what is the color of apples?",['orange','red','green','yellow'],1);
+    questionsArr[4]=new questionConst(4,"what is the color of grapes?",['orange','red','green','yellow'],0);
+    questionsArr[5]=new questionConst(5,"what is the color of mango?",['orange','red','green','yellow'],0);
 
-    questionsArr[6]=new questionConst(6,"what is the color of strawberry?",['orange','red','green','yellow'],1,null);
+    questionsArr[6]=new questionConst(6,"what is the color of strawberry?",['orange','red','green','yellow'],1);
 
-    questionsArr[7]=new questionConst(7,"what is the color of pineapple?",['orange','red','green','yellow'],3,null);
+    questionsArr[7]=new questionConst(7,"what is the color of pineapple?",['orange','red','green','yellow'],3);
     
-    questionsArr[8]=new questionConst(8,"what is the color of kiwi?",['orange','red','green','yellow'],2,null);
-    questionsArr[9]=new questionConst(9,"what is the color of tomato?",['orange','red','green','yellow'],1,null);
+    questionsArr[8]=new questionConst(8,"what is the color of kiwi?",['orange','red','green','yellow'],2);
+    questionsArr[9]=new questionConst(9,"what is the color of tomato?",['orange','red','green','yellow'],1);
 
 
     
@@ -72,6 +82,9 @@ function showQuestionN(){
         answers[index].children[0].innerText=String.fromCharCode(index+97);
         answers[index].children[1].innerText=selectedQuestionsArr[currentQ].ansArr[index];
     }
+    if(currentQ==selectedQuestionsArr.length-1)
+        nextBtn.style.display="none";
+    else nextBtn.style.display="block";
     updateQuestionLink();
 
 }
@@ -162,19 +175,23 @@ terminateBtn.addEventListener("click",function(){
     if(confirm("are you sure you want to terminate exam?"))
     {
         var score=calcScore();
-        var alertString="your score is :"+score+"%\n";
-        if(score<50)
-            alertString+="LOSER";
-        else if(score<80)
-            alertString+="Not bad";
-        else alertString+="Great";
-        alert(alertString);
+        showResults(score);
     }
 });
+function showResults(score){
+    testContainer.style.display="none";
+    resultsContainer.style.display="flex";
+    var userData=_user.nam+"\n"+_user.age+"\n"+_user.phone+"\n"+_user.email+"\n"+_user.gender;
+    var resultString="\n\nyour score is :"+score+"%\n";
 
-createQuestions();
-selectRandomQuestions(5);
-alert("Start exam");
+    results.children[0].innerText=userData;
+    results.children[1].innerText=resultString;
+
+}
+
+// createQuestions();
+// selectRandomQuestions(5);
+// alert("Start exam");
 
 
 

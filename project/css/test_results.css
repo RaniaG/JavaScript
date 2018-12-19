@@ -1,0 +1,35 @@
+.test-result-container{
+    background-color: black;
+    position: absolute;
+    width:100%;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    flex-flow: column;
+    color:white;
+}
+.test-result{
+    width:50%;
+    height: 50%;
+    background-color: lightseagreen ;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    
+    padding:20px;
+}
+.test-result__user-data{
+    align-self: center;
+    text-align: center;
+    line-height: 30px;
+    height: 80%;
+    width: 100%;
+    color:black
+}
+.test-result__result{
+    display: flex;
+    align-items: center;
+    color:black;
+}

@@ -1,7 +1,11 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.test{
+    position: absolute;
+    display: none;
+    width:100%;
+}
 .questions-nav{
     background-color: black;
     display: flex;
@@ -85,7 +89,7 @@
     height: 100px;
     align-self: flex-end;
     display: flex;
-    justify-content:space-between;
+    justify-content:flex-end;
     align-items: center;
 }
 .control-btn{

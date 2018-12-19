@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/test_results.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="form-container">
+        <form action="test.html" method='POST'>
+            <div class="form-item">
+                Name*
+                <input type="text" name="name">
+            </div>
+            <div class="form-item">
+                Age*
+                <input type="text" name="age"> 
+            </div>
+            <div class="form-item">
+                Mobile*
+                <input type="text" name="phone"> 
+            </div>
+            <div class="form-item">
+                Email*
+                <input type="text" name="email"> 
+            </div>
+            <div class="form-item">
+                Gender*
+                <input type="radio" name="gender" value='female' id='female'>
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value='male' id='male'>
+                <label for="male">Male</label>
+
+            </div>
+            <div class="form-btn">
+                <input type="button" value="Submit" >
+            </div>
+        </form>
+    </div>
+    <div class="test">
+            <div class="questions-nav">
+                <div class="q-link active" question='1'>
+                    1
+                </div>
+                <div class="q-link" question='2'>
+                    2
+                </div>
+                <div class="q-link" question='3'>
+                    3
+                </div>
+                <div class="q-link" question='4'>
+                    4
+                </div>
+                <div class="q-link" question='5'>
+                    5
+                </div>
+            </div>
+            <div class="questions-container">
+                <div class="questions">
+                    <div class="question">
+                        what is the capital of Egypt?
+                    </div>
+                    <div class="answer-container ">
+                        <div class="answer-number">
+                            a
+                        </div>
+                        <div class="answer-content">
+                            answer one
+                        </div>
+                    </div>
+                    <div class="answer-container">
+                        <div class="answer-number">
+                            b
+                        </div>
+                        <div class="answer-content">
+                            answer one
+                        </div>
+                    </div>
+                    <div class="answer-container">
+                        <div class="answer-number">
+                            c
+                        </div>
+                        <div class="answer-content">
+                            answer one
+                        </div>
+                    </div>
+                    <div class="answer-container">
+                        <div class="answer-number">
+                            d
+                        </div>
+                        <div class="answer-content">
+                            answer one
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <div class="control-btn" id='next'>
+                            next
+                        </div>
+                        <div class="control-btn" id='skip'>
+                            skip
+                        </div>
+                        <div class="control-btn" id='terminate'>
+                            terminate
+                        </div>
+                    </div>
+                </div>
+                <div class="skipped">
+                </div>
+            </div>
+    </div>
+    <div class="test-result-container">
+            <h2>Test Result</h2>
+            <div class="test-result">
+                
+                <div class="test-result__user-data"> 
+                </div>
+                <div class="test-result__result">
+                    
+                </div>
+            </div>
+        </div>
+    <script src="js/test.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>
