@@ -138,13 +138,22 @@ function showNextQuestion(){
 }
 function calcScore(){
     var score=0;
-    selectedQuestionsArr.forEach(function(el){
-        if(el.correctAns==el.ans)
+    selectedQuestionsArr.forEach(function(el,i){
+        if(el.correctAns==el.ans&&!skippedQsArr[i])
             score++;
     })
     return score/selectedQuestionsArr.length*100;
 }
+function showResults(score){
+    testContainer.style.display="none";
+    resultsContainer.style.display="flex";
+    var userData=_user.nam+"\n"+_user.age+"\n"+_user.phone+"\n"+_user.email+"\n"+_user.gender;
+    var resultString="\n\nyour score is :"+score+"%\n";
 
+    results.children[0].innerText=userData;
+    results.children[1].innerText=resultString;
+
+}
 /**---------------------------------------------------------------------------------------------------------- */
 answers.forEach=Array.prototype.forEach;
 links.forEach=Array.prototype.forEach;
@@ -178,16 +187,7 @@ terminateBtn.addEventListener("click",function(){
         showResults(score);
     }
 });
-function showResults(score){
-    testContainer.style.display="none";
-    resultsContainer.style.display="flex";
-    var userData=_user.nam+"\n"+_user.age+"\n"+_user.phone+"\n"+_user.email+"\n"+_user.gender;
-    var resultString="\n\nyour score is :"+score+"%\n";
 
-    results.children[0].innerText=userData;
-    results.children[1].innerText=resultString;
-
-}
 
 // createQuestions();
 // selectRandomQuestions(5);
